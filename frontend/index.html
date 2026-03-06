@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Microservices App</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; background: #f0f0f0; }
+    .card { background: white; padding: 30px; border-radius: 10px; display: inline-block; }
+    button { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #0056b3; }
+    #result { margin-top: 20px; font-size: 24px; color: #333; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🚀 Kubernetes Microservices Demo</h1>
+    <p>Running on AWS EKS</p>
+    <button onclick="getVisits()">Count My Visit</button>
+    <div id="result"></div>
+  </div>
+  <script>
+    async function getVisits() {
+      const res = await fetch('/api/visits');
+      const data = await res.json();
+      document.getElementById('result').innerHTML = 
+        `<p>Total Visits: <strong>${data.visits}</strong></p><p>${data.message}</p>`;
+    }
+  </script>
+</body>
+</html>

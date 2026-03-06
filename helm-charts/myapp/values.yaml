@@ -1,0 +1,57 @@
+backend:
+  replicas: 2
+  image:
+    repository: krishna149/microservices-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    port: 3000
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "250m"
+      memory: "256Mi"
+
+frontend:
+  replicas: 2
+  image:
+    repository: krishna149/microservices-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    port: 80
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "250m"
+      memory: "256Mi"
+
+redis:
+  replicas: 1
+  image:
+    repository: redis
+    tag: 7-alpine
+    pullPolicy: IfNotPresent
+  service:
+    port: 6379
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "64Mi"
+    limits:
+      cpu: "150m"
+      memory: "128Mi"
+
+hpa:
+  minReplicas: 2
+  maxReplicas: 10
+  cpuTargetUtilization: 50
+
+ingress:
+  enabled: true
+  className: nginx
+  host: app.local
