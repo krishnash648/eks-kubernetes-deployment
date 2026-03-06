@@ -4,9 +4,9 @@ metadata:
   name: microservices-ingress
   namespace: microservices-prod
 spec:
+  ingressClassName: nginx
   rules:
-  - host: app.local
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
