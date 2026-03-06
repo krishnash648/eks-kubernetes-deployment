@@ -170,7 +170,7 @@ Open the AWS LoadBalancer URL in your browser.
 
 # 👩‍💻 Author
 
-**Krishna**
+**Krishna Sharma**
 
 GitHub
 https://github.com/krishnash648
