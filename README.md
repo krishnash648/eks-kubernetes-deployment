@@ -32,6 +32,7 @@ Due to AWS infrastructure costs, the cluster is not kept running continuously. H
 ---
 ## 📸 Application Preview
 ![Application Screenshot](assets/app-preview.png)
+Application successfully deployed on AWS EKS using Kubernetes services, Helm charts and NGINX Ingress.
 ---
 
 # 🧰 Tech Stack
