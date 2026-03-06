@@ -1,5 +1,10 @@
 # 🚀 Kubernetes Microservices Deployment on AWS EKS
 
+![AWS](https://img.shields.io/badge/AWS-EKS-orange)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-1.29-blue)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![Helm](https://img.shields.io/badge/Helm-Package%20Manager-blue)
+
 ![Architecture Diagram](assets/architecture.png)
 
 A **production-style microservices deployment** on **AWS Elastic Kubernetes Service (EKS)** using Docker, Kubernetes, Helm, Redis, Horizontal Pod Autoscaling, and NGINX Ingress.
@@ -10,16 +15,23 @@ This project demonstrates how containerized services can be deployed and scaled 
 
 # 🌐 Live Demo
 
-Application running on AWS EKS:
+The application was deployed on AWS Elastic Kubernetes Service (EKS) with a production-style architecture.
 
-**Live URL**
+Deployment components included:
 
-```
-http://aaef7ad0f1bd7452b95058a39e1afc5a-b0dda9770afa98f5.elb.us-east-1.amazonaws.com
-```
+- AWS EKS cluster
+- Managed node group (EC2 instances)
+- NGINX Ingress Controller
+- AWS LoadBalancer (ELB)
+- Helm-based application deployment
 
-*(Note: The link works only while the EKS cluster is running.)*
+External traffic was routed through the AWS LoadBalancer to the Kubernetes Ingress controller, which then forwarded requests to the frontend and backend services.
 
+Due to AWS infrastructure costs, the cluster is not kept running continuously. However, the project can be redeployed using the steps provided in the Deployment section.
+
+---
+## 📸 Application Preview
+![Application Screenshot](assets/app-preview.png)
 ---
 
 # 🧰 Tech Stack
